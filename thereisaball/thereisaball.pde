@@ -1,22 +1,32 @@
 
 
-
-Ball maBalle = new Ball(200, 200, 350, color(230, 127, 2));
-Ball maBalle1 = new Ball(300, 300, 350, color(20, 0, 235));
+Ball_Manager ball_Manager = new Ball_Manager();
 
 
 void setup () {
-  
-  size (750, 750);
-
-  background(0);
-
+  size (1500, 1500);
+  background(0); 
+  frameRate(25);
 }
 
 
 void draw() {
+  background(0);
+  ball_Manager.process();
+}
 
-    maBalle.draw();
-    maBalle1.draw();
+void mousePressed() {
+  
+  println("pressed");
+  
+  ball_Manager.createNewBall();
+  
+}
+
+void mouseDragged() {
+  
+  println("dragged");
+  
+  ball_Manager.createNewBall();
   
 }
