@@ -1,20 +1,22 @@
+
+
+
+Ball maBalle = new Ball(200, 200, 350, color(230, 127, 2));
+Ball maBalle1 = new Ball(300, 300, 350, color(20, 0, 235));
+
+
 void setup () {
+  
   size (750, 750);
-  stroke(0,0,255);
+
   background(0);
+
 }
-int centreCercleX = 250;
-int centreCercleY = 250;
-int largeurCercle = 250;
-int hauteurCercle = 250;
-int rouge = 1;
-int vert = 1;
-int bleu = 255;
+
 
 void draw() {
-  ellipse(mouseX, mouseY, 250, 250);
-  stroke(rouge, vert, bleu);
-  fill(0);
-  rouge++;
+
+    maBalle.draw();
+    maBalle1.draw();
   
 }
