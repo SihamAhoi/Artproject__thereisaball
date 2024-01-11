@@ -29,11 +29,14 @@ class Ball_Manager{
             b.positionY = b.positionY + (250 - b.diametre) / 5;
            // b.positionY = b.positionY + (500 - b.diametre) / 10;
 
-            // TODO MAN : ajouter une condition pour supprimer les balles en dehors de l'écran
-            // (en rapport avec positionY)
+            if(b.positionY > (height + b.diametre)) {
+             listBall.remove(i);
+             println("si tu sors tu disparais ; et tu disparais ou ? en :", b.positionY);
+            }
+            
             if(b.diametre <= 0) {
                 listBall.remove(i);
-                println("oh! on a enlevé une balle tiens, combien ? ca : ", listBall.size());
+                println("oh! on a enlevé une balle tiens, combien ? ca fait : ", listBall.size());
             }
 
         }
