@@ -31,12 +31,12 @@ void mouseDragged() {
   
   float dist = dist(mouseX, mouseY, prevX, prevY);
   
-  if(dist > 50) {
+  //if(dist > 50) {
 
     ball_Manager.createNewBall();
     prevX = mouseX;
     prevY = mouseY;
-  } 
+  //} 
 }
 
 

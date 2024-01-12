@@ -9,7 +9,7 @@ class Ball_Manager{
     }
 
     void createNewBall() {
-        balls.add(new Ball(mouseX, mouseY, (int)random(5, 500), colorManager.getRandomColor())); 
+        balls.add(new Ball(mouseX, mouseY, (int)random(5, maxSize), colorManager.getRandomColor())); 
         // println("nouvelle balle, voici la taille de la liste : ", balls.size());
     }
 
@@ -25,7 +25,7 @@ class Ball_Manager{
 
             b.diametre = b.diametre - 2;
 
-            b.positionY = b.positionY + (250 - b.diametre) / 5;
+            b.positionY = b.positionY + (maxSize / 2 - b.diametre);
            // b.positionY = b.positionY + (500 - b.diametre) / 10;
             
             if(b.diametre <= 0 || b.positionY > (height + b.diametre/2)) {
@@ -36,7 +36,7 @@ class Ball_Manager{
         }
 
     }
-
+    int maxSize = 100;
     ArrayList<Ball> balls;
     ColorManager colorManager; 
 
