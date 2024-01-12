@@ -17,7 +17,7 @@ void draw() {
 
 void mousePressed() {
   
-  println("pressed");
+  // println("pressed");
   
   ball_Manager.createNewBall();
   
@@ -25,7 +25,7 @@ void mousePressed() {
 
 void mouseDragged() {
   
-  println("dragged");
+ // println("dragged");
   
   ball_Manager.createNewBall();
   

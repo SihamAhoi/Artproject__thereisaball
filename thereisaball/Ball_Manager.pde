@@ -3,24 +3,21 @@
 class Ball_Manager{
   
     Ball_Manager() {
-        listBall = new ArrayList<Ball>();
-        listBall.add(new Ball(300, 300, 350, color(20, 0, 235))); // balle 0 dans la liste
-        listBall.add(new Ball(200, 200, 350, color(230, 127, 2))); // balle 1 dans la liste
-        listBall.add(new Ball(200, 400, 350, color(30, 127, 2))); 
-        listBall.add(new Ball(700, 500, 350, color(230, 27, 2))); 
-        listBall.add(new Ball(600, 200, 350, color(230, 127, 152))); 
+        balls = new ArrayList<Ball>();
+       
+        colorManager = new ColorManager ();
     }
 
     void createNewBall() {
-        listBall.add(new Ball(mouseX, mouseY, (int)random(5, 500), color(random(255), random(255), random(255)))); 
-        println("nouvelle balle, voici la taille de la liste : ", listBall.size());
+        balls.add(new Ball(mouseX, mouseY, (int)random(5, 500), colorManager.getRandomColor())); 
+        // println("nouvelle balle, voici la taille de la liste : ", balls.size());
     }
 
     void process() {
 
-        for (int i = 0; i < listBall.size(); i++) {
+        for (int i = 0; i < balls.size(); i++) {
 
-            Ball b = listBall.get(i);
+            Ball b = balls.get(i);
 
             b.draw();
 
@@ -28,21 +25,17 @@ class Ball_Manager{
 
             b.positionY = b.positionY + (250 - b.diametre) / 5;
            // b.positionY = b.positionY + (500 - b.diametre) / 10;
-
-            if(b.positionY > (height + b.diametre)) {
-             listBall.remove(i);
-             println("si tu sors tu disparais ; et tu disparais ou ? en :", b.positionY);
-            }
             
-            if(b.diametre <= 0) {
-                listBall.remove(i);
-                println("oh! on a enlevé une balle tiens, combien ? ca fait : ", listBall.size());
+            if(b.diametre <= 0 || b.positionY > (height + b.diametre/2)) {
+                balls.remove(i);
+            //   println("oh! on a enlevé une balle tiens, combien ? ca fait : ", balls.size());
             }
 
         }
 
     }
 
-    ArrayList<Ball> listBall;
+    ArrayList<Ball> balls;
+    ColorManager colorManager; 
 
 };
