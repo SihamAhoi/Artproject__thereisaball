@@ -25,18 +25,18 @@ void mousePressed() {
 
 
 // distance
-int prevX = 0;
-int prevY = 0;
+// int prevX = 0;
+// int prevY = 0;
 void mouseDragged() {
   
-  float dist = dist(mouseX, mouseY, prevX, prevY);
+  //float dist = dist(mouseX, mouseY, prevX, prevY);
   
-  if(dist > 50) {
+  //if(dist > 50) {
 
     ball_Manager.createNewBall();
-    prevX = mouseX;
-    prevY = mouseY;
-  } 
+    //prevX = mouseX;
+    //prevY = mouseY;
+ // } 
 }
 
 
