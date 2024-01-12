@@ -15,6 +15,12 @@ class Ball {
     circle(positionX, positionY, diametre);
   }
   
+  boolean isVisible() {
+     int top = positionY - diametre / 2;
+     int bottom = top + diametre;
+     return top < height && bottom > 0;
+  }
+  
   int positionX;
   int positionY;
   int diametre;

@@ -18,8 +18,10 @@ class Ball_Manager{
         for (int i = 0; i < balls.size(); i++) {
 
             Ball b = balls.get(i);
-
-            b.draw();
+            
+            if(b.isVisible()) {
+              b.draw();
+            }
 
             b.diametre = b.diametre - 2;
 

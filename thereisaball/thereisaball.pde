@@ -23,10 +23,36 @@ void mousePressed() {
   
 }
 
+
+// distance
+int prevX = 0;
+int prevY = 0;
 void mouseDragged() {
   
- // println("dragged");
+  float dist = dist(mouseX, mouseY, prevX, prevY);
   
-  ball_Manager.createNewBall();
-  
+  if(dist > 50) {
+
+    ball_Manager.createNewBall();
+    prevX = mouseX;
+    prevY = mouseY;
+  } 
 }
+
+
+/*
+
+// time
+int lastTime = 0;
+
+void mouseDragged() {
+  
+  int curTime = millis();
+  
+  if(curTime - lastTime > 25) {
+
+    ball_Manager.createNewBall();
+    lastTime = curTime;
+  } 
+}
+*/
