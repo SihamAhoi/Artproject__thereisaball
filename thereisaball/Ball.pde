@@ -16,9 +16,14 @@ class Ball {
   }
   
   boolean isVisible() {
-     int top = positionY - diametre / 2;
-     int bottom = top + diametre;
-     return top < height && bottom > 0;
+     int rayon = diametre/2 ;
+     
+     int top = positionY - rayon ;
+     int bottom = positionY + rayon ;
+     int right = positionX + rayon;
+     int left = positionX - rayon;
+     return top < height && bottom > 0 && left < width && right > 0;
+     
   }
   
   int positionX;
